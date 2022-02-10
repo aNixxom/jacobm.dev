@@ -107,10 +107,26 @@ section > div > img.code-badge {
     transition: all 500ms;
 }
 
-section > div.projects > ul> li {
-    text-decoration: none;
-    list-style: none;
+section > div.projects {
+    width: min-content;
+    /* outline: 2px solid red; */
+    margin: 0 auto;
+
+}
+
+section > div.projects > ul > li {
+    /* outline: 2px solid yellow;  */
+    margin-bottom: 2rem;
+    list-style:none;
+    margin-left: -2rem;
     font-family: 'Courier New', Courier, monospace;
+    color: white;
+    width: fit-content;
+    
+}
+
+section > div.projects > ul > li > a {
+    text-decoration: none;
     color: white;
 }
 
