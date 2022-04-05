@@ -1,8 +1,10 @@
+
 *{
   box-sizing: border-box;
 }
 
 body {
+    scroll-behavior: smooth;
     margin: 0;
 }
 
@@ -188,5 +190,3 @@ section > div.contact > ul > li {
     width: fit-content;
     margin: 0 auto;
 }
-
-
