@@ -1,5 +1,5 @@
 
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -20,6 +20,8 @@ body {
 }
   
 header {
+    font-size: 5rem;
+    color: white;
     position: relative;
     display: flex;
     justify-content: center;
@@ -61,7 +63,7 @@ header > img {
     text-shadow: 0 0 5px black;;
 }
 
-@keyframes glow {
+/* @keyframes glow {
     from {
       text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
     }
@@ -77,7 +79,7 @@ header > img {
       to {
         box-shadow: 0 0 20px #fff, 0 0 10px #ff4da6, 0 0 25px #ff4da6, 0 0 20px #ff4da6, 0 0 25px #ff4da6, 0 0 30px #ff4da6, 0 0 35px #ff4da6;
       }
-}
+} */
 
 div.gallery {
     margin-bottom: 39;
@@ -122,7 +124,6 @@ div.desc {
 section {
     outline: 2px transparent solid;
     font-size: 2rem;
-    padding: 2rem;
     background-color: #666;
 }
 
@@ -155,38 +156,57 @@ section > div.img-wrapper > img.code-badge {
     transition: all 500ms;
 }
 
-section > div.projects {
-    width: min-content;
-    margin: 0 auto;
-
+.parallax {
+    background: url(/img/jeopardy.png) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-section > div.projects > ul > li {
-    margin-bottom: 2rem;
-    list-style:none;
-    margin-left: -2rem;
-    font-family: 'Courier New', Courier, monospace;
+.two {
+    background: url('img/fdir.PNG') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 500px;
+}
+
+.three {
+    background: url('img/jack-bros.PNG') no-repeat center;
+    background-attachment: fixed;
+}
+
+.project-title {
     color: white;
-    width: fit-content;
-    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
 }
 
-section > div.projects > ul > li > a {
+button {
     text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
+    font-size: 50px;
     color: white;
-}
-
-section > div.projects > ul> li:hover {
-    cursor: pointer;
-    text-decoration: underline
-}
-
-section > div.contact > ul > li {
-    margin-bottom: 2rem;
-    list-style:none;
-    margin-left: -2rem;
-    font-family: 'Courier New', Courier, monospace;
-    color: white;
+    background-color: hsl(32,81%,56%);
+    border-radius: 4px;
+    outline: 2px solid white;
     width: fit-content;
-    margin: 0 auto;
+    border: none;
 }
+
+button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.container {
+    border-radius: 5px;
+    padding: 0 5px 10px 5px;
+    text-align: center;
+}
+
