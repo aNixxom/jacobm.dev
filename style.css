@@ -1,15 +1,80 @@
-
-* {
-  box-sizing: border-box;
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-    scroll-behavior: smooth;
     margin: 0;
+}
+
+header {
+    font-size: 5rem;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.warning-popup-box {
+    transition: opacity 1s;
+    max-width: 300px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgb(212, 209, 209);
+    display: none;
+    opacity: 0;
+}
+
+
+.navbar-parent {
+    top: 0;
+    width: 100%;
+    display: flex;
+    float: left;
+    position: fixed;
+    z-index: 1001;
+    align-items: center;
+    justify-content: center;
+    background-color: #161A24;
+}
+
+.navbar a {
+    display: block;
+    float: left;
+    user-select: none;
+    padding: 10px;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+  
+.navbar { 
+    text-align: center;
 }
 
 .no-select {
     user-select: none;
+    text-align: center;
 }
 
 .wrapper {
@@ -18,33 +83,12 @@ body {
     overflow-x: hidden;
     perspective: 10px;
 }
-  
-header {
-    font-size: 5rem;
-    color: white;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    transform-style: preserve-3d;
-    z-index: -1;
-}
-
-header > img {
-    user-select: none;
-    -webkit-user-drag: none;
-}
-
-.background {
-    transform: translateZ(-10px) scale(2);
-}
 
 .foreground {
     transform: translateZ(-5px) scale(1.5);
 }
 
-.background,
+
 .foreground {
     position: absolute;
     height: 100%;
@@ -54,159 +98,127 @@ header > img {
 }
 
 .title {
-    -webkit-animation: glow 1s ease-in-out infinite alternate;
-    -moz-animation: glow 1s ease-in-out infinite alternate;
-    animation: glow 1s ease-in-out infinite alternate;
     font-family: 'Courier New', Courier, monospace;
     font-size: 5rem;
     color: white;
     text-shadow: 0 0 5px black;;
 }
 
-/* @keyframes glow {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-    }
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-    }
-}
-
-@keyframes glow-border {
-    from {
-        box-shadow: 0 0 10px #fff, 0 0 5px #fff, 0 0 10px #e60073, 0 0 15px #e60073, 0 0 20px #e60073, 0 0 25px #e60073, 0 0 30px #e60073;
-      }
-      to {
-        box-shadow: 0 0 20px #fff, 0 0 10px #ff4da6, 0 0 25px #ff4da6, 0 0 20px #ff4da6, 0 0 25px #ff4da6, 0 0 30px #ff4da6, 0 0 35px #ff4da6;
-      }
-} */
-
-div.gallery {
+.gallery {
     margin-bottom: 39;
     font-family: 'Courier New', Courier, monospace;
     color: white;
     text-align: center;
 }
 
-div.gallery:hover {
+.gallery:hover {
    outline: 2px solid  white;
 }
 
-div.gallery img {
+.gallery img {
     width: 100%;
     height: auto;
+    object-fit: cover;
 }
 
-div.desc {
+.desc {
     padding: 15px;
     text-align: center;
 }
 
 .responsive {
+    display: flex; justify-content: center; align-items: center; flex-direction: row;
     padding: 0 6px;
+    width: 20%;
     float: left;
-    width: 24.99999%;
+    
 }
-
-@media only screen and (max-width: 700px) {
-    .responsive {
-      width: 49.99999%;
-      margin: 6px 0;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    .responsive {
-      width: 100%;
-    }
-}
-
 section {
     outline: 2px transparent solid;
     font-size: 2rem;
+    padding: 2rem;
     background-color: #666;
-}
-
-section > div.img-wrapper, div.projects {
-    display: flex;
-    justify-content: center;
 }
 
 section > h1 { 
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
     color: white;
-    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.img-wrapper, .projects {
+    display: flex;
+    justify-content: center;
 }
 
 
-
-section > div.img-wrapper > img.code-badge{
+.code-badge{
     aspect-ratio: 1/1;
     width: 250px;
     padding: 1px;
-}
-
-section > div.img-wrapper > img.code-badge:hover {
-    transform: scale(1.1);
-}
-
-
-section > div.img-wrapper > img.code-badge {
     transition: all 500ms;
 }
 
-.parallax {
-    background: url(/img/jeopardy.png) no-repeat center;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 500px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.code-badge:hover {
+    transform: scale(1.1);
 }
 
-.two {
-    background: url('img/fdir.PNG') no-repeat center;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 500px;
+.projects {
+    width: min-content;
+    margin: 0 auto;
+
 }
 
-.three {
-    background: url('img/jack-bros.PNG') no-repeat center;
-    background-attachment: fixed;
+.work-samples {
+    width:min-content;
 }
 
-.project-title {
+section > div.projects > ul > li {
+    margin-bottom: 2rem;
+    list-style:none;
+    margin-left: -2rem;
+    font-family: 'Courier New', Courier, monospace;
     color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-transform: uppercase;
-}
-
-button {
-    text-decoration: none;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-transform: uppercase;
-    font-size: 50px;
-    color: white;
-    background-color: hsl(32,81%,56%);
-    border-radius: 4px;
-    outline: 2px solid white;
     width: fit-content;
-    border: none;
+    
 }
 
-button:hover {
+section > div.projects > ul > li > a {
+    text-decoration: none;
+    color: white;
+}
+
+section > div.projects > ul> li:hover {
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: underline
 }
 
-.container {
-    border-radius: 5px;
-    padding: 0 5px 10px 5px;
-    text-align: center;
+section > div.contact > ul > li {
+    margin-bottom: 2rem;
+    list-style:none;
+    margin-left: -2rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    width: fit-content;
+    margin: 0 auto;
 }
 
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+    .navbar a {
+        font-size: 1.5rem;
+        float: left;
+    }
+
+    .responsive {
+        display: block;
+        float: none;
+        width: auto;
+    }
+
+    body > div.wrapper > section > div.languages > div {
+        display: block;
+    }
+}
