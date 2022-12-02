@@ -203,6 +203,10 @@ section > div.contact > ul > li {
     margin: 0 auto;
 }
 
+body > div.wrapper > section > div.languages > ol {
+    display: none;
+}
+
 @media screen and (max-width: 768px) {
     .title {
         font-size: 3rem;
@@ -219,6 +223,20 @@ section > div.contact > ul > li {
     }
 
     body > div.wrapper > section > div.languages > div {
-        display: block;
+        display: none;
     }
+    body > div.wrapper > section > div.languages > ol {
+        text-align: center;
+        list-style: none;
+        color:white;
+        font-family: 'Courier New', Courier, monospace;
+        display: block;
+        padding: 0;
+    }
+    
+    body > div.wrapper > section > div.contact > ul {
+        font-size: 1.5rem;
+        padding: 0;
+    }
+
 }
