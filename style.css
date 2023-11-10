@@ -1,9 +1,11 @@
-* {
+*,ul {
     margin: 0;
-    overflow: hidden;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 .nav-bar {
+    position: sticky;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -33,13 +35,24 @@
     justify-content: space-around;
 }
 
-
-.about-me {
+.section {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    overflow: hidden;
 }
+
+.vertical-divider {
+    border: 1px solid #676767;
+    height: 100%;
+    margin: 15px;
+}
+
+.horizontal-divider {
+    border: 1px solid #676767;
+    width: 50%;
+}
+
 
 .headshot {
     width: 200px;
@@ -47,11 +60,15 @@
     background: url('/img/Jacob-Martin.png') no-repeat;
 }
 
-.divider {
-    border: 1px solid #676767;
-    height: 100%;
-}
-
 .about {
     max-width: 500px;
+}
+
+.languages {
+    text-align: center;
+}
+
+.code-badge {
+    aspect-ratio: 1/1;
+    width: 10%;
 }
