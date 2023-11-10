@@ -1,242 +1,57 @@
-*{
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
+* {
     margin: 0;
+    overflow: hidden;
 }
 
-header {
-    font-size: 5rem;
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f1f1f;
     color: white;
-    position: relative;
+}
+
+.nav-bar-left {
+    padding: 10px;
+}
+
+.nav-bar-links {
+    list-style-type: none;
+}
+
+.nav-bar-links > li {
+    float: right;
+    padding: 10px;
+}
+
+.content {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100%;
-    transform-style: preserve-3d;
-    z-index: -1;
-}
-
-img {
-    user-select: none;
-    -webkit-user-drag: none;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-.warning-popup-box {
-    transition: opacity 1s;
-    max-width: 300px;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: rgb(212, 209, 209);
-    display: none;
-    opacity: 0;
+    justify-content: space-around;
 }
 
 
-.navbar-parent {
-    top: 0;
-    width: 100%;
+.about-me {
     display: flex;
-    float: left;
-    position: fixed;
-    z-index: 1001;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    background-color: #161A24;
+    justify-content: space-around;
 }
 
-.navbar a {
-    display: block;
-    float: left;
-    user-select: none;
-    padding: 10px;
-    font-size: 25px;
-    font-family: 'Courier New', Courier, monospace;
-    text-decoration: none;
-    color: white;
+.headshot {
+    width: 200px;
+    height: 200px;
+    background: url('/img/Jacob-Martin.png') no-repeat;
 }
 
-.navbar a:hover {
-    text-decoration: underline;
-}
-  
-.navbar { 
-    text-align: center;
-}
-
-.no-select {
-    user-select: none;
-    text-align: center;
-}
-
-.wrapper {
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    perspective: 10px;
-}
-
-.foreground {
-    transform: translateZ(-5px) scale(1.5);
-}
-
-
-.foreground {
-    position: absolute;
+.divider {
+    border: 1px solid #676767;
     height: 100%;
-    width: 300vh;
-    object-fit: cover;
-    z-index: -1;
 }
 
-.title {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 5rem;
-    color: white;
-    text-shadow: 0 0 5px black;;
-}
-
-.gallery {
-    margin-bottom: 39;
-    font-family: 'Courier New', Courier, monospace;
-    color: white;
-    text-align: center;
-}
-
-.gallery:hover {
-   outline: 2px solid  white;
-}
-
-.gallery img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.desc {
-    padding: 15px;
-    text-align: center;
-}
-
-.responsive {
-    display: flex; justify-content: center; align-items: center; flex-direction: row;
-    padding: 0 6px;
-    width: 20%;
-    float: left;
-    
-}
-section {
-    outline: 2px transparent solid;
-    font-size: 2rem;
-    padding: 2rem;
-    background-color: #666;
-}
-
-section > h1 { 
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    color: white;
-}
-
-.img-wrapper, .projects {
-    display: flex;
-    justify-content: center;
-}
-
-
-.code-badge{
-    aspect-ratio: 1/1;
-    width: 250px;
-    padding: 1px;
-    transition: all 500ms;
-}
-
-.code-badge:hover {
-    transform: scale(1.1);
-}
-
-.projects {
-    width: min-content;
-    margin: 0 auto;
-
-}
-
-.work-samples {
-    width:min-content;
-}
-
-section > div.projects > ul > li {
-    margin-bottom: 2rem;
-    list-style:none;
-    margin-left: -2rem;
-    font-family: 'Courier New', Courier, monospace;
-    color: white;
-    width: fit-content;
-    
-}
-
-section > div.projects > ul > li > a {
-    text-decoration: none;
-    color: white;
-}
-
-section > div.projects > ul> li:hover {
-    cursor: pointer;
-    text-decoration: underline
-}
-
-section > div.contact > ul > li {
-    margin-bottom: 2rem;
-    list-style:none;
-    margin-left: -2rem;
-    font-family: 'Courier New', Courier, monospace;
-    color: white;
-    width: fit-content;
-    margin: 0 auto;
-}
-
-body > div.wrapper > section > div.languages > ol {
-    display: none;
-}
-
-@media screen and (max-width: 768px) {
-    .title {
-        font-size: 3rem;
-    }
-    .navbar a {
-        font-size: 1.5rem;
-        float: left;
-    }
-
-    .responsive {
-        display: block;
-        float: none;
-        width: auto;
-    }
-
-    body > div.wrapper > section > div.languages > div {
-        display: none;
-    }
-    body > div.wrapper > section > div.languages > ol {
-        text-align: center;
-        list-style: none;
-        color:white;
-        font-family: 'Courier New', Courier, monospace;
-        display: block;
-        padding: 0;
-    }
-    
-    body > div.wrapper > section > div.contact > ul {
-        font-size: 1.5rem;
-        padding: 0;
-    }
-
+.about {
+    max-width: 500px;
 }
